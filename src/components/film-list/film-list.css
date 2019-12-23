@@ -1,0 +1,79 @@
+.show-style {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    margin-left: 106px;
+}
+
+.month-line {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    
+    height: 100px;
+    width: 760px;
+    font-size: 40px;
+}
+
+.show-description {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: 30px;
+
+
+    font-size: 35px;
+    line-height: 15px;
+}
+
+.show-name {
+    margin-left: 50px;
+    margin-bottom: 30px;
+}
+
+.show-block {
+    width: 140px;
+    height: 200px;
+}
+
+.block-img {
+    max-width: 100%;
+    height: auto;
+}
+
+.show-season {
+    margin-top: 30px;
+    height: 80px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5;
+}
+
+.list-btn {
+    width: 670px;
+    height: 80px;
+    margin-left: 106px;
+    font-size: 30px;
+    background-color: white;
+    border-color: #d6d6d6;
+}
+
+.extra-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 108px;
+    width: 750px;
+    height: 1200px;
+}
+
+.extra-img {
+    max-width: 100%;
+    height: auto;
+}
