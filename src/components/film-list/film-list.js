@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import TVmazeService from '../../service/tvmaze-service';
 import './film-list.css';
-import imgDefault from './big-bang.png';
 
 const monthName = ['Января', 'Февраля', 'Марта', 'Апреля', 'Мая', 'Июня', 'Июля',
  'Августа', 'Сентября', 'Октября', 'Ноября', 'Декабря'];
@@ -42,11 +41,8 @@ export default class FilmList extends Component {
     }
 
     onBiggerImg = (url) => {
-        console.log(url);
-        this.setState((state) => {
-            return {
-                biggerImg: url
-            }
+        this.setState({
+            biggerImg: url
         }); 
     }
 
@@ -55,19 +51,6 @@ export default class FilmList extends Component {
         const showFilms = this.state.showMore === true ? this.state.filmArr : this.state.filmArr.slice(0, 4);
         const countRestFilms = this.state.filmArr.length - 4;
         const btnText = this.state.showMore === true ? `Показать меньше ^` : `Еще ${countRestFilms} сериала`;
-        
-        const showBiggerImg = () => {
-            console.log(this.state.onBiggerImg);
-            if ( this.state.onBiggerImg === true) {
-                return (
-                    <div className="extra-block">
-                        <img src={this.state.onBiggerImg !== null ? this.state.onBiggerImg : imgDefault} className="extra-img"/>
-                    </div>
-                )
-            } else { 
-                return ( <div> Null </div>)
-            }     
-        }
 
         const showDescription = showFilms.map((item) => {
             return (
@@ -89,10 +72,12 @@ export default class FilmList extends Component {
         return (
             <div className='show-style'>
                 <div className='month-line'>
-                <p> {this.day + ' ' + monthName[this.month] + ' ' + this.year}</p>    
+                    <p> {this.day + ' ' + monthName[this.month] + ' ' + this.year}</p>    
                 </div>
                 {showDescription}
-                {showBiggerImg}
+                <div className="extra-block" onClick={() => this.onBiggerImg(false)}>
+                    <img src={this.state.biggerImg } className="extra-img" />
+                </div>                
                 <button className='list-btn' onClick={this.onShowMore}>{btnText}</button>
             </div>
         );

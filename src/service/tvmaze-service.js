@@ -1,5 +1,3 @@
-
-
 export default class TVmazeService {
 
   _apiBase = 'http://api.tvmaze.com/schedule?country=US&date=';
