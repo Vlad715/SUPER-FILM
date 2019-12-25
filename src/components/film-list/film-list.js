@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import TVmazeService from '../../service/tvmaze-service';
 import './film-list.css';
+import imgDef from './404.png';
 
 const monthName = ['Января', 'Февраля', 'Марта', 'Апреля', 'Мая', 'Июня', 'Июля',
  'Августа', 'Сентября', 'Октября', 'Ноября', 'Декабря'];
@@ -43,7 +44,7 @@ export default class FilmList extends Component {
     onBiggerImg = (url) => {
         this.setState({
             biggerImg: url
-        }); 
+        });
     }
 
     render() {    
@@ -53,13 +54,19 @@ export default class FilmList extends Component {
         const btnText = this.state.showMore === true ? `Показать меньше ^` : `Еще ${countRestFilms} сериала`;
 
         const showDescription = showFilms.map((item) => {
+
+            const nameShowStart = item.name.slice(0, 30);
+            const nameShowEnd = item.name.slice(30, 60);
+
             return (
                 <div className='show-description'>
-                    <div className='show-block' onClick={() => this.onBiggerImg(`${item.image}`)}>
-                        <img className="block-img"src={item.image } />       
+                    <div className='show-block' onClick={() => 
+                        this.onBiggerImg(`${item.image !== null ? item.image : imgDef}`)}>
+                        <img className="block-img"src={item.image !== null ? item.image : imgDef} />       
                     </div>
                     <div className='show-name'>
-                        <p>{item.name}</p>
+                        <p>{nameShowStart}</p>
+                        <p>{nameShowEnd}</p>
                         <p>{item.year}</p>
                         <div className='show-season'>
                             <p>Сезон {item.season}: Эпизод {item.episode}</p>

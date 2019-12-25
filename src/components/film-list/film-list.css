@@ -31,7 +31,8 @@
 
 .show-name {
     margin-left: 50px;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
+    width: 500px;
 }
 
 .show-block {
@@ -47,6 +48,7 @@
 .show-season {
     margin-top: 30px;
     height: 80px;
+    width: 380px;
 
     display: flex;
     justify-content: center;
@@ -57,7 +59,7 @@
 .list-btn {
     width: 670px;
     height: 80px;
-    margin-left: 106px;
+    margin-left: 50px;
     font-size: 30px;
     background-color: white;
     border-color: #d6d6d6;

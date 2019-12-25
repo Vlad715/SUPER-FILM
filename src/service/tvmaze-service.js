@@ -19,12 +19,16 @@ export default class TVmazeService {
 
     _transformMovie = (arrayMovie) => {
       const newArr = arrayMovie.map((el) => {
+
+        // const { show: { image: { original = null } = {} } } = el;
+        const original = el.show.image !== null ? el.show.image.original : null;
+
         return {
           id: el.id,
           name: el.name,
           season: el.season,
           episode: el.number,
-          image: el.show.image.original,
+          image: original,
           year: el.show.premiered
         }
       });
