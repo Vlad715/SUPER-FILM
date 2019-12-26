@@ -58,9 +58,11 @@ export default class FilmList extends Component {
             const nameShowStart = item.name.slice(0, 30);
             const nameShowEnd = item.name.slice(30, 60);
 
+            
+
             return (
                 <div className='show-description'>
-                    <div className='show-block' onClick={() => 
+                    <div className='show-block' onClick={() =>
                         this.onBiggerImg(`${item.image !== null ? item.image : imgDef}`)}>
                         <img className="block-img"src={item.image !== null ? item.image : imgDef} />       
                     </div>
