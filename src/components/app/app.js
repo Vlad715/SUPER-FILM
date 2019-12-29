@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {  BrowserRouter as Router, 
-    Route, 
-    Switch} from 'react-router-dom';
+        Route, 
+        Switch} from 'react-router-dom';
 
 import Header from '../header';
 import MainPage from '../main-page';
@@ -23,7 +23,7 @@ export default class App extends Component {
                     <Route path="/films/:date" 
                         render={({ match }) => {
                             const { date } = match.params;
-                            return <FilmList itemId={date}/>
+                            return <FilmList date={date}/>
                         }}/>
                 </Switch>
             </Router>   

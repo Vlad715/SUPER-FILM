@@ -7,8 +7,8 @@ import tvPict from './TV.png';
 
 const  MainPage = ( {history} ) => {
 
-    let onChange = (itemId) => {
-        history.push(`/films/${itemId}`);
+    const onChangeDate = (date) => {
+        history.push(`/films/${date}`);
     };
 
     return (
@@ -23,7 +23,7 @@ const  MainPage = ( {history} ) => {
             </div>
             <div className="calendar">
                 <Calendar
-                    onChange={(el) => onChange(el)}
+                    onChange={(date) => onChangeDate(date)}
                     value={new Date()}
                 />
             </div>
